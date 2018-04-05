@@ -60,13 +60,26 @@
 
 	$.get("http://data.fixer.io/api/latest?access_key=5bfb479c750aade3ac636ad3eedc2370", function(response){
 		
-	let usCrcyRate = (response.rates.EUR) / (response.rates.USD);
-	let 
+	let usRateFromEuro = (response.rates.EUR) / (response.rates.USD);
+
+	// determine exchange rate from US to other
+	// regular math is: input(usRateFromEuro)* country's currency rate
 
 
-	})
+	let usToEuro = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.EUR);
+	let usToGBP = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.GBP);
+	let usToCNY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.CNY);
+	let usToJPY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.JPY);
 
+	//create click event that grabs input from #usDollar
 
+	$('#euro').on('click', function(){
+		countryCode = $('#usDollar').val();	
+
+		console.log(countryCode);
+	});
+
+});
 
 
 
