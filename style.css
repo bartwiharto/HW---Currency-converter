@@ -6,6 +6,7 @@ body{
 .center {
 	color: white;
 	margin: auto;
+	margin-top: 200px;
     width: 60%;
     border: 5px solid #C5B358;
     padding: 10px;
@@ -13,16 +14,20 @@ body{
 
 h1{
 	text-align: center;
+	font-family: 'Libre Baskerville', serif;
+
 }
 
 form{
+	font-family: 'Abril Fatface', cursive;
 	margin: auto;
     width: 60%;
 	padding: 10px;
-	padding-left: 20px;
+	padding-left: 205px;
 }
 
 p {
+	font-family: 'Libre Baskerville', serif;
 	text-align: center;
 	color: white;
 }
