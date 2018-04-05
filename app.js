@@ -66,7 +66,6 @@
 	// regular math is: input(usRateFromEuro)* country's currency rate
 
 
-	let usToEuro = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.EUR);
 	let usToGBP = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.GBP);
 	let usToCNY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.CNY);
 	let usToJPY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.JPY);
@@ -74,9 +73,11 @@
 	//create click event that grabs input from #usDollar
 
 	$('#euro').on('click', function(){
-		countryCode = $('#usDollar').val();	
+			usInput = $('#usDollar').val();
+		
+		let usToEuro = (usInput * usRateFromEuro) * (response.rates.EUR);
 
-		console.log(countryCode);
+		$('#output_amount').append("<p> Today, $" + usInput + " is \u20ac" + usToEuro.toFixed(2));
 	});
 
 });
