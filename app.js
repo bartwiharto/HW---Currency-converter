@@ -73,7 +73,7 @@
 		
 		let usToEuro = (usInput * usRateFromEuro) * (response.rates.EUR);
 
-		$('#output_amount').append("<p> Today, $" + usInput + " is \u20ac" + usToEuro.toFixed(2));
+		$('#output_amount').append("<p> Today, $" + usInput + " is about \u20ac" + usToEuro.toFixed(2));
 	});
 
 	//finish the rest of the currencies!!
@@ -83,7 +83,7 @@
 		
 		let usToGBP = (usInput * usRateFromEuro) * (response.rates.GBP);
 
-		$('#output_amount').append("<p> Today, $" + usInput + " is \u00a3" + usToGBP.toFixed(2));
+		$('#output_amount').append("<p> Today, $" + usInput + " is about \u00a3" + usToGBP.toFixed(2));
 	});
 
 	$('#chinaYuan').on('click', function(){
@@ -91,7 +91,7 @@
 		
 		let usToCNY = (usInput * usRateFromEuro) * (response.rates.CNY);
 
-		$('#output_amount').append("<p> Today, $" + usInput + " is " + usToCNY.toFixed(2) + " RMB.");
+		$('#output_amount').append("<p> Today, $" + usInput + " is about " + usToCNY.toFixed(2) + " RMB.");
 	});
 
 	$('#japanYen').on('click', function(){
@@ -99,7 +99,7 @@
 		
 		let usToJPY = (usInput * usRateFromEuro) * (response.rates.JPY);
 
-		$('#output_amount').append("<p> Today, $" + usInput + " is " + usToJPY.toFixed(2) + " Yen.");
+		$('#output_amount').append("<p> Today, $" + usInput + " is about " + usToJPY.toFixed(2) + " Yen.");
 	});
 });
 
