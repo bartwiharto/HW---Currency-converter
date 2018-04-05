@@ -62,13 +62,9 @@
 		
 	let usRateFromEuro = (response.rates.EUR) / (response.rates.USD);
 
-	// determine exchange rate from US to other
-	// regular math is: input(usRateFromEuro)* country's currency rate
+	// determine exchange rate from US to other :DONE
 
-
-	let usToGBP = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.GBP);
-	let usToCNY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.CNY);
-	let usToJPY = ($('#usDollar').val() * (usRateFromEuro)) * (response.rates.JPY);
+	// regular math is: input(usRateFromEuro)* country's currency rate: DONE
 
 	//create click event that grabs input from #usDollar
 
@@ -80,6 +76,31 @@
 		$('#output_amount').append("<p> Today, $" + usInput + " is \u20ac" + usToEuro.toFixed(2));
 	});
 
+	//finish the rest of the currencies!!
+
+	$('#britPound').on('click', function(){
+			usInput = $('#usDollar').val();
+		
+		let usToGBP = (usInput * usRateFromEuro) * (response.rates.GBP);
+
+		$('#output_amount').append("<p> Today, $" + usInput + " is \u00a3" + usToGBP.toFixed(2));
+	});
+
+	$('#chinaYuan').on('click', function(){
+			usInput = $('#usDollar').val();
+		
+		let usToCNY = (usInput * usRateFromEuro) * (response.rates.CNY);
+
+		$('#output_amount').append("<p> Today, $" + usInput + " is " + usToCNY.toFixed(2) + " RMB.");
+	});
+
+	$('#japanYen').on('click', function(){
+			usInput = $('#usDollar').val();
+		
+		let usToJPY = (usInput * usRateFromEuro) * (response.rates.JPY);
+
+		$('#output_amount').append("<p> Today, $" + usInput + " is " + usToJPY.toFixed(2) + " Yen.");
+	});
 });
 
 
